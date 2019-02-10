@@ -46,34 +46,34 @@ conductivity=316; %microS/cm
 electricity=0; %keeps track of electricity use
 
 %https://www.researchgate.net/post/How_is_it_possible_to_convert_conductivity_of_NaCl_solution_in_uS_to_its_salinity_NaCl_concentration_in_ppm
-End
+end
 
 % Define sub-functions for each module
 %%Accumulator
-Function a=accumulator ()
+function a=accumulator ()
 Global T F Di Pi conductivity
 %%increase inlet water pressure
 %negligible height, pipe length
 Po=Pi+1000*9.8*(0.55*1864.25/9.8)%in Pa, Head as 62 ft, no friction
 
 
-End
+end
 
 %%Filtration
-Function f= filtration ()
+function f= filtration ()
 	%similar to RO equation except different diffusivity
 	
-End
+end
 
 % Ultrafiltraion
-Function u= ultrafiltration ()
+function u= ultrafiltration ()
 
-End
+end
 
 % Ion exchange
 Function c= IEC ()
 
-End
+fnd
 
 %Reverse osmosis
 Function r=RO ()
