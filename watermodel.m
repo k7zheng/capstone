@@ -101,7 +101,7 @@ While error>0.01
 	Lstar=0.029*Dh;
 	If Re<2100 && L>Lstar
 	Sh=0.664*(Re^0.5)*(Sc^0.33)*(Dh/L)^0.33;
-		If Re<2100 L<Lstar
+		If Re<2100 && L<Lstar
 		Sh=1.86*(Re^0.33)*(Sc^0.33)*(Dh/L)^0.33;
 			Else
 			%turbulent regime
