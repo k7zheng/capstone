@@ -64,12 +64,14 @@ end
 
 % Ultrafiltration
 Function u= ultrafiltration (C_treated_organism)
-
 Global T F Di Pi conductivity C_Organism Po
-
 %removes viruses, bacteria, etc.
+%requires air (air pump)
+
+
 %good upto 6.25 bar, operating TMP is 2.1bar, filtrate flux is 40-120 L/m^2/hr
 %Laminar fluid through the capillary (Hagen-Poiseuille Model for Laminar Flow through Channel)
+
 kB=1.38064852e-23; %in J/K
 Dp=0.03*10^-6; %mean pore diameter in meter
 Do= (0.2e-6+5e-9)/2; %mean diameter of solute (ORGANISMS) (bacteria from 0.2 to 10 microns)(virus from 5-300 nm)
@@ -137,6 +139,7 @@ While error>0.01
 	J1=0.001204*C_1s*deltaX; %solvent flux
 End
 C_treated_organism=C_2p;
+J1=F; %permeate flow is the new flowrate to the next module
 End
 
 function F=ROfunction(C_2f,C_2p)
